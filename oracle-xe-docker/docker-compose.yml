@@ -1,0 +1,17 @@
+services:
+  oracle-xe:
+    image: gvenzl/oracle-xe:21-slim
+    container_name: home
+    ports:
+      - "5050:1521"  # JDBC connection
+      - "5051:5500"  # Enterprise Manager (optional)
+    environment:
+      ORACLE_PASSWORD: Oracle123
+      ORACLE_CHARACTERSET: AL32UTF8
+      APP_USER: HOME
+      APP_USER_PASSWORD: HOME
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+
+volumes:
+  oracle-data:
