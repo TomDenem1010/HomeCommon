@@ -2,5 +2,6 @@ package com.home.common.video;
 
 public enum Status {
     ACTIVE,
-    INACTIVE
+    INACTIVE,
+    READING
 }

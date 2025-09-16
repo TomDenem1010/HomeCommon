@@ -13,27 +13,34 @@ public class VideoMapper {
 
     private ActorRepository actorRepository;
     private FolderRepository folderRepository;
+    private FolderMapper folderMapper;
+    private ActorMapper actorMapper;
 
     public VideoDto toDto(final VideoDao videoDao) {
         return new VideoDto(
                 videoDao.getId(),
-                folderRepository.findFolderDtoById(videoDao.getFolderId()).orElse(null),
+                folderMapper.toDto(folderRepository.findById(videoDao.getFolderId()).orElse(null)),
                 videoDao.getName(),
                 videoDao.getFileSize(),
-                actorRepository.findActorDtosToVideo(videoDao.getId()),
+                actorRepository.findByVideos_Id(videoDao.getId()).stream()
+                        .map(actorMapper::toDto)
+                        .toList(),
                 videoDao.getStatus(),
                 videoDao.getCreatedAt(),
                 videoDao.getUpdatedAt());
     }
 
     public static VideoDao toEntity(final VideoDto videoDto) {
-        return new VideoDao(
-                videoDto.id(),
-                videoDto.folder().id(),
-                videoDto.name(),
-                videoDto.fileSize(),
-                videoDto.status(),
-                videoDto.createdAt(),
-                videoDto.updatedAt());
+        VideoDao videoDao = new VideoDao();
+
+        videoDao.setId(videoDto.id());
+        videoDao.setFolderId(videoDto.folder().id());
+        videoDao.setName(videoDto.name());
+        videoDao.setFileSize(videoDto.fileSize());
+        videoDao.setStatus(videoDto.status());
+        videoDao.setCreatedAt(videoDto.createdAt());
+        videoDao.setUpdatedAt(videoDto.updatedAt());
+
+        return videoDao;
     }
 }

@@ -17,11 +17,14 @@ public class FolderMapper {
     }
 
     public FolderDao toEntity(final FolderDto folderDto) {
-        return new FolderDao(
-                folderDto.id(),
-                folderDto.path(),
-                folderDto.status(),
-                folderDto.createdAt(),
-                folderDto.updatedAt());
+        FolderDao folderDao = new FolderDao();
+
+        folderDao.setId(folderDto.id());
+        folderDao.setPath(folderDto.path());
+        folderDao.setStatus(folderDto.status());
+        folderDao.setCreatedAt(folderDto.createdAt());
+        folderDao.setUpdatedAt(folderDto.updatedAt());
+
+        return folderDao;
     }
 }

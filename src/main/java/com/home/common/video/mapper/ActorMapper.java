@@ -17,11 +17,14 @@ public class ActorMapper {
     }
 
     public ActorDao toEntity(final ActorDto actorDto) {
-        return new ActorDao(
-                actorDto.id(),
-                actorDto.name(),
-                actorDto.status(),
-                actorDto.createdAt(),
-                actorDto.updatedAt());
+        ActorDao actorDao = new ActorDao();
+
+        actorDao.setId(actorDto.id());
+        actorDao.setName(actorDto.name());
+        actorDao.setStatus(actorDto.status());
+        actorDao.setCreatedAt(actorDto.createdAt());
+        actorDao.setUpdatedAt(actorDto.updatedAt());
+
+        return actorDao;
     }
 }
