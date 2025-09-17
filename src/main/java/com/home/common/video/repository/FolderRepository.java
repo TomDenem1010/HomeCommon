@@ -3,6 +3,7 @@ package com.home.common.video.repository;
 import com.home.common.video.dao.FolderDao;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -13,6 +14,10 @@ import org.springframework.stereotype.Repository;
 public interface FolderRepository extends JpaRepository<FolderDao, Long> {
 
     Optional<FolderDao> findById(Long id);
+
+    @Modifying
+    @Query(value = "SELECT * FROM FOLDER WHERE STATUS = ?", nativeQuery = true)
+    List<FolderDao> findAllByStatus(String status);
 
     @Modifying
     @Query(value = "UPDATE FOLDER SET STATUS = ? WHERE STATUS = ?", nativeQuery = true)

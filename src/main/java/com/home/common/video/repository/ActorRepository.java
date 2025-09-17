@@ -17,6 +17,10 @@ public interface ActorRepository extends JpaRepository<ActorDao, Long> {
     List<ActorDao> findByVideos_Id(Long videoId);
 
     @Modifying
+    @Query(value = "SELECT * FROM ACTOR WHERE STATUS = ?", nativeQuery = true)
+    List<ActorDao> findAllByStatus(String status);
+
+    @Modifying
     @Query(value = "UPDATE ACTOR SET STATUS = ? WHERE STATUS = ?", nativeQuery = true)
     void updateAllActorStatusByStatus(String toStatus, String fromStatus);
 
