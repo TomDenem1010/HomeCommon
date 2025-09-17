@@ -5,14 +5,17 @@ import com.home.common.video.dto.VideoDto;
 import com.home.common.video.repository.ActorRepository;
 import com.home.common.video.repository.FolderRepository;
 import lombok.AllArgsConstructor;
+
+import java.util.stream.Collectors;
+
 import org.springframework.stereotype.Component;
 
 @Component
 @AllArgsConstructor
 public class VideoMapper {
 
-    private ActorRepository actorRepository;
     private FolderRepository folderRepository;
+    private ActorRepository actorRepository;
     private FolderMapper folderMapper;
     private ActorMapper actorMapper;
 
@@ -30,16 +33,20 @@ public class VideoMapper {
                 videoDao.getUpdatedAt());
     }
 
-    public static VideoDao toEntity(final VideoDto videoDto) {
+    public VideoDao toEntity(final VideoDto videoDto) {
         VideoDao videoDao = new VideoDao();
 
         videoDao.setId(videoDto.id());
-        videoDao.setFolderId(videoDto.folder().id());
+        videoDao.setFolderId(
+                folderRepository.findByPath((videoDto.folder().path())).orElseThrow(RuntimeException::new).getId());
         videoDao.setName(videoDto.name());
         videoDao.setFileSize(videoDto.fileSize());
         videoDao.setStatus(videoDto.status());
         videoDao.setCreatedAt(videoDto.createdAt());
         videoDao.setUpdatedAt(videoDto.updatedAt());
+        videoDao.setActors(videoDto.actors().stream()
+                .map(actor -> actorRepository.findByName(actor.name()).orElseThrow(RuntimeException::new))
+                .collect(Collectors.toSet()));
 
         return videoDao;
     }
