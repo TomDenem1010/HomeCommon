@@ -15,4 +15,11 @@ import lombok.Setter;
 public class FindActorsResponse extends HomeObject {
 
     private List<ActorDto> actors;
+
+    @Override
+    public String toString() {
+        return "FindActorsResponse{" +
+                "actors=" + actors +
+                '}';
+    }
 }

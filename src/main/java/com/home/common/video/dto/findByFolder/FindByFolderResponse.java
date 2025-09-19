@@ -15,4 +15,11 @@ import lombok.Setter;
 public class FindByFolderResponse extends HomeObject {
 
     private List<VideoDto> videos;
+
+    @Override
+    public String toString() {
+        return "FindByFolderResponse{" +
+                "videos=" + videos +
+                '}';
+    }
 }

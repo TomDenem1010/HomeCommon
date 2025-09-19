@@ -15,4 +15,11 @@ import lombok.Setter;
 public class FindVideosResponse extends HomeObject {
 
     private List<VideoDto> videos;
+
+    @Override
+    public String toString() {
+        return "FindVideosResponse{" +
+                "videos=" + videos +
+                '}';
+    }
 }

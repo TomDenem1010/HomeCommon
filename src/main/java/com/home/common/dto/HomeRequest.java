@@ -13,4 +13,12 @@ public abstract class HomeRequest<T extends HomeObject> {
 
     private HomeHeader header;
     private T request;
+
+    @Override
+    public String toString() {
+        return "HomeRequest{" +
+                "header=" + header +
+                ", request=" + request +
+                '}';
+    }
 }

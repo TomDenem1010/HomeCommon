@@ -15,4 +15,11 @@ import lombok.Setter;
 public class FindFoldersResponse extends HomeObject {
 
     private List<FolderDto> folders;
+
+    @Override
+    public String toString() {
+        return "FindFoldersResponse{" +
+                "folders=" + folders +
+                '}';
+    }
 }

@@ -13,4 +13,11 @@ import lombok.Setter;
 public class FindByFolderRequest extends HomeObject {
 
     private String folder;
+
+    @Override
+    public String toString() {
+        return "FindByFolderRequest{" +
+                "folder='" + folder + '\'' +
+                '}';
+    }
 }

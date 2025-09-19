@@ -13,4 +13,11 @@ import lombok.Setter;
 public class FindByActorRequest extends HomeObject {
 
     private String name;
+
+    @Override
+    public String toString() {
+        return "FindByActorRequest{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }
