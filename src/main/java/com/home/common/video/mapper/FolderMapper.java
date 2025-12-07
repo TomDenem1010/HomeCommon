@@ -2,6 +2,10 @@ package com.home.common.video.mapper;
 
 import com.home.common.video.dao.FolderDao;
 import com.home.common.video.dto.FolderDto;
+
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -20,7 +24,7 @@ public class FolderMapper {
         FolderDao folderDao = new FolderDao();
 
         folderDao.setId(folderDto.id());
-        folderDao.setPath(folderDto.path());
+        folderDao.setPath(URLEncoder.encode(folderDto.path(), StandardCharsets.UTF_8));
         folderDao.setStatus(folderDto.status());
         folderDao.setCreatedAt(folderDto.createdAt());
         folderDao.setUpdatedAt(folderDto.updatedAt());

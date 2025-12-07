@@ -42,6 +42,9 @@ public class VideoDao {
     @Column(name = "NAME", length = 256)
     private String name;
 
+    @Column(name = "FULL_NAME", length = 256)
+    private String fullName;
+
     @Column(name = "FILE_SIZE", length = 128)
     private String fileSize;
 
