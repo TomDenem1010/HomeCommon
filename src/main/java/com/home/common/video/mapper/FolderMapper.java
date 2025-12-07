@@ -24,7 +24,7 @@ public class FolderMapper {
         FolderDao folderDao = new FolderDao();
 
         folderDao.setId(folderDto.id());
-        folderDao.setPath(URLEncoder.encode(folderDto.path(), StandardCharsets.UTF_8));
+        folderDao.setPath(folderDto.path());
         folderDao.setStatus(folderDto.status());
         folderDao.setCreatedAt(folderDto.createdAt());
         folderDao.setUpdatedAt(folderDto.updatedAt());
