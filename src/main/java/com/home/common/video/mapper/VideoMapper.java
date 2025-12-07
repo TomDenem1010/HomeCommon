@@ -6,7 +6,6 @@ import com.home.common.video.repository.ActorRepository;
 import com.home.common.video.repository.FolderRepository;
 import lombok.AllArgsConstructor;
 
-import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.stream.Collectors;
@@ -46,7 +45,7 @@ public class VideoMapper {
                                                 (URLEncoder.encode(videoDto.folder().path(), StandardCharsets.UTF_8)))
                                                 .orElseThrow(RuntimeException::new).getId());
                 videoDao.setName(videoDto.name());
-                videoDao.setFullName(videoDto.fullName());
+                videoDao.setFullName(URLEncoder.encode(videoDto.fullName(), StandardCharsets.UTF_8));
                 videoDao.setFileSize(videoDto.fileSize());
                 videoDao.setStatus(videoDto.status());
                 videoDao.setCreatedAt(videoDto.createdAt());
