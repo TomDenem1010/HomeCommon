@@ -14,12 +14,10 @@ import lombok.Setter;
 @NoArgsConstructor
 public class FindByFolderResponse extends HomeObject {
 
-    private List<VideoDto> videos;
+  private List<VideoDto> videos;
 
-    @Override
-    public String toString() {
-        return "FindByFolderResponse{" +
-                "videos=" + videos +
-                '}';
-    }
+  @Override
+  public String toString() {
+    return "FindByFolderResponse{" + "videos=" + videos + '}';
+  }
 }

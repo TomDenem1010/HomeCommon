@@ -14,12 +14,10 @@ import lombok.Setter;
 @NoArgsConstructor
 public class FindFoldersResponse extends HomeObject {
 
-    private List<FolderDto> folders;
+  private List<FolderDto> folders;
 
-    @Override
-    public String toString() {
-        return "FindFoldersResponse{" +
-                "folders=" + folders +
-                '}';
-    }
+  @Override
+  public String toString() {
+    return "FindFoldersResponse{" + "folders=" + folders + '}';
+  }
 }

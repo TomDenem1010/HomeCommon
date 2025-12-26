@@ -12,12 +12,10 @@ import lombok.Setter;
 @NoArgsConstructor
 public class FindByFolderRequest extends HomeObject {
 
-    private String folder;
+  private String folder;
 
-    @Override
-    public String toString() {
-        return "FindByFolderRequest{" +
-                "folder='" + folder + '\'' +
-                '}';
-    }
+  @Override
+  public String toString() {
+    return "FindByFolderRequest{" + "folder='" + folder + '\'' + '}';
+  }
 }

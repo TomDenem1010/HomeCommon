@@ -5,8 +5,8 @@ import com.home.common.dto.HomeRequest;
 
 public class FindActorsRequest extends HomeRequest<HomeObject> {
 
-    @Override
-    public String toString() {
-        return "FindActorsRequest{}";
-    }
+  @Override
+  public String toString() {
+    return "FindActorsRequest{}";
+  }
 }

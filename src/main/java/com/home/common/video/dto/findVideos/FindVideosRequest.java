@@ -5,8 +5,8 @@ import com.home.common.dto.HomeRequest;
 
 public class FindVideosRequest extends HomeRequest<HomeObject> {
 
-    @Override
-    public String toString() {
-        return "FindVideosRequest{}";
-    }
+  @Override
+  public String toString() {
+    return "FindVideosRequest{}";
+  }
 }

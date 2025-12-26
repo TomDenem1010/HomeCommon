@@ -4,11 +4,13 @@ import com.home.common.dto.HomeRequest;
 
 public class FindByActorRequestWrapper extends HomeRequest<FindByActorRequest> {
 
-    @Override
-    public String toString() {
-        return "FindByActorRequestWrapper{" +
-                "header=" + getHeader() +
-                ", request=" + getRequest() +
-                '}';
-    }
+  @Override
+  public String toString() {
+    return "FindByActorRequestWrapper{"
+        + "header="
+        + getHeader()
+        + ", request="
+        + getRequest()
+        + '}';
+  }
 }

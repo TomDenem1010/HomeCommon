@@ -5,52 +5,40 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.5.5</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<version>4.0.1</version>
 	</parent>
 	<groupId>com.home</groupId>
 	<artifactId>common</artifactId>
-	<version>0.0.5</version>
+	<version>0.0.6</version>
 	<name>common</name>
-	<url/>
-	<licenses>
-		<license/>
-	</licenses>
-	<developers>
-		<developer/>
-	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
 	<properties>
-		<java.version>24</java.version>
+		<java.version>25</java.version>
+		<maven.compiler.version>3.14.1</maven.compiler.version>
+		<lombok.version>1.18.42</lombok.version>
+		<spotless.version>3.1.0</spotless.version>
+		<google-java-format.version>1.33.0</google-java-format.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
-			<version>3.5.4</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<version>3.5.4</version>
 			<scope>test</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-			<version>3.5.4</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
 			<optional>true</optional>
 		</dependency>
 	</dependencies>
@@ -60,7 +48,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>3.5.4</version>
 				<configuration>
 					<skip>true</skip>
 				</configuration>
@@ -69,15 +56,15 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.14.0</version> 
+				<version>${maven.compiler.version}</version> 
 				<configuration>
-					<source>24</source>        
-					<target>24</target>
+					<source>${java.version}</source>        
+					<target>${java.version}</target>
 					<annotationProcessorPaths>
 						<path>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
-							<version>1.18.38</version>
+							<version>${lombok.version}</version>
 						</path>
 					</annotationProcessorPaths>
 				</configuration>
@@ -86,17 +73,13 @@
 			<plugin>
 				<groupId>com.diffplug.spotless</groupId>
 				<artifactId>spotless-maven-plugin</artifactId>
-				<version>2.46.1</version>
+				<version>${spotless.version}</version>
 				<configuration>
 					<java>
 						<lineEndings>UNIX</lineEndings>
 						<googleJavaFormat>
-							<version>1.27.0</version> 
+							<version>${google-java-format.version}</version> 
 						</googleJavaFormat>
-						<indent>
-							<tabs>true</tabs>
-							<spacesPerTab>2</spacesPerTab>
-						</indent>
 						<indent>
 							<spaces>true</spaces>
 							<spacesPerTab>4</spacesPerTab>

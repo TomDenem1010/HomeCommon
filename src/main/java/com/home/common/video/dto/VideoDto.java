@@ -5,13 +5,12 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public record VideoDto(
-                Long id,
-                FolderDto folder,
-                String name,
-                String fullName,
-                String fileSize,
-                List<ActorDto> actors,
-                Status status,
-                LocalDateTime createdAt,
-                LocalDateTime updatedAt) {
-}
+    Long id,
+    FolderDto folder,
+    String name,
+    String fullName,
+    String fileSize,
+    List<ActorDto> actors,
+    Status status,
+    LocalDateTime createdAt,
+    LocalDateTime updatedAt) {}

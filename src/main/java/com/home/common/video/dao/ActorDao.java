@@ -14,7 +14,6 @@ import jakarta.persistence.Table;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -28,27 +27,27 @@ import org.springframework.data.annotation.LastModifiedDate;
 @Table(name = "ACTOR")
 public class ActorDao {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "actor_seq")
-    @SequenceGenerator(name = "actor_seq", sequenceName = "ACTOR_SEQ", allocationSize = 1)
-    @Column(name = "ID")
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "actor_seq")
+  @SequenceGenerator(name = "actor_seq", sequenceName = "ACTOR_SEQ", allocationSize = 1)
+  @Column(name = "ID")
+  private Long id;
 
-    @Column(name = "NAME", length = 256)
-    private String name;
+  @Column(name = "NAME", length = 256)
+  private String name;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "STATUS", length = 128)
-    private Status status;
+  @Enumerated(EnumType.STRING)
+  @Column(name = "STATUS", length = 128)
+  private Status status;
 
-    @CreatedDate
-    @Column(name = "CREATED_AT")
-    private LocalDateTime createdAt;
+  @CreatedDate
+  @Column(name = "CREATED_AT")
+  private LocalDateTime createdAt;
 
-    @LastModifiedDate
-    @Column(name = "UPDATED_AT")
-    private LocalDateTime updatedAt;
+  @LastModifiedDate
+  @Column(name = "UPDATED_AT")
+  private LocalDateTime updatedAt;
 
-    @ManyToMany(mappedBy = "actors")
-    private Set<VideoDao> videos = new HashSet<>();
+  @ManyToMany(mappedBy = "actors")
+  private Set<VideoDao> videos = new HashSet<>();
 }

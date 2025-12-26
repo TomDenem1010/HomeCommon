@@ -24,24 +24,24 @@ import org.springframework.data.annotation.LastModifiedDate;
 @Table(name = "FOLDER")
 public class FolderDao {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "folder_seq")
-    @SequenceGenerator(name = "folder_seq", sequenceName = "FOLDER_SEQ", allocationSize = 1)
-    @Column(name = "ID")
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "folder_seq")
+  @SequenceGenerator(name = "folder_seq", sequenceName = "FOLDER_SEQ", allocationSize = 1)
+  @Column(name = "ID")
+  private Long id;
 
-    @Column(name = "PATH", length = 256)
-    private String path;
+  @Column(name = "PATH", length = 256)
+  private String path;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "STATUS", length = 128)
-    private Status status;
+  @Enumerated(EnumType.STRING)
+  @Column(name = "STATUS", length = 128)
+  private Status status;
 
-    @CreatedDate
-    @Column(name = "CREATED_AT")
-    private LocalDateTime createdAt;
+  @CreatedDate
+  @Column(name = "CREATED_AT")
+  private LocalDateTime createdAt;
 
-    @LastModifiedDate
-    @Column(name = "UPDATED_AT")
-    private LocalDateTime updatedAt;
+  @LastModifiedDate
+  @Column(name = "UPDATED_AT")
+  private LocalDateTime updatedAt;
 }

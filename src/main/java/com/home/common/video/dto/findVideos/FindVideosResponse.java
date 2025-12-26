@@ -14,12 +14,10 @@ import lombok.Setter;
 @NoArgsConstructor
 public class FindVideosResponse extends HomeObject {
 
-    private List<VideoDto> videos;
+  private List<VideoDto> videos;
 
-    @Override
-    public String toString() {
-        return "FindVideosResponse{" +
-                "videos=" + videos +
-                '}';
-    }
+  @Override
+  public String toString() {
+    return "FindVideosResponse{" + "videos=" + videos + '}';
+  }
 }

@@ -14,12 +14,10 @@ import lombok.Setter;
 @NoArgsConstructor
 public class FindActorsResponse extends HomeObject {
 
-    private List<ActorDto> actors;
+  private List<ActorDto> actors;
 
-    @Override
-    public String toString() {
-        return "FindActorsResponse{" +
-                "actors=" + actors +
-                '}';
-    }
+  @Override
+  public String toString() {
+    return "FindActorsResponse{" + "actors=" + actors + '}';
+  }
 }

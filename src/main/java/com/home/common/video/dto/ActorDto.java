@@ -4,4 +4,4 @@ import com.home.common.video.Status;
 import java.time.LocalDateTime;
 
 public record ActorDto(
-        Long id, String name, Status status, LocalDateTime createdAt, LocalDateTime updatedAt) {}
+    Long id, String name, Status status, LocalDateTime createdAt, LocalDateTime updatedAt) {}

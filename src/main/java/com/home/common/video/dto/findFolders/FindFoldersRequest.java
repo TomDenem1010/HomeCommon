@@ -5,8 +5,8 @@ import com.home.common.dto.HomeRequest;
 
 public class FindFoldersRequest extends HomeRequest<HomeObject> {
 
-    @Override
-    public String toString() {
-        return "FindFoldersRequest{}";
-    }
+  @Override
+  public String toString() {
+    return "FindFoldersRequest{}";
+  }
 }
