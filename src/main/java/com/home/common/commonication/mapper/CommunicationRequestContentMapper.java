@@ -1,27 +1,27 @@
 package com.home.common.commonication.mapper;
 
 import com.home.common.commonication.dao.CommunicationRequestContent;
-import com.home.common.commonication.dto.CommunicationResponseContentDto;
+import com.home.common.commonication.dto.CommunicationRequestContentDto;
 import org.springframework.stereotype.Component;
 
 @Component
 public class CommunicationRequestContentMapper {
 
-  public CommunicationResponseContentDto toDto(
+  public CommunicationRequestContentDto toDto(
       final CommunicationRequestContent communicationRequestContent) {
-    return new CommunicationResponseContentDto(
+    return new CommunicationRequestContentDto(
         communicationRequestContent.getId(),
         communicationRequestContent.getTransactionId(),
         communicationRequestContent.getContent());
   }
 
   public CommunicationRequestContent toEntity(
-      final CommunicationResponseContentDto communicationResponseContentDto) {
+      final CommunicationRequestContentDto communicationRequestContentDto) {
     CommunicationRequestContent communicationRequestContent = new CommunicationRequestContent();
 
-    communicationRequestContent.setId(communicationResponseContentDto.id());
-    communicationRequestContent.setTransactionId(communicationResponseContentDto.transactionId());
-    communicationRequestContent.setContent(communicationResponseContentDto.content());
+    communicationRequestContent.setId(communicationRequestContentDto.id());
+    communicationRequestContent.setTransactionId(communicationRequestContentDto.transactionId());
+    communicationRequestContent.setContent(communicationRequestContentDto.content());
 
     return communicationRequestContent;
   }
