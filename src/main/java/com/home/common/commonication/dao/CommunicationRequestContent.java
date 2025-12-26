@@ -18,15 +18,20 @@ import lombok.Setter;
 @Table(name = "COMMUNICATION_REQUEST_CONTENT")
 public class CommunicationRequestContent {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "communication_request_content_seq")
-    @SequenceGenerator(name = "communication_request_content_seq", sequenceName = "COMMUNICATION_REQUEST_CONTENT_SEQ", allocationSize = 1)
-    @Column(name = "ID")
-    private Long id;
+  @Id
+  @GeneratedValue(
+      strategy = GenerationType.SEQUENCE,
+      generator = "communication_request_content_seq")
+  @SequenceGenerator(
+      name = "communication_request_content_seq",
+      sequenceName = "COMMUNICATION_REQUEST_CONTENT_SEQ",
+      allocationSize = 1)
+  @Column(name = "ID")
+  private Long id;
 
-    @Column(name = "TRANSACTION_ID", length = 256)
-    private String transactionId;
+  @Column(name = "TRANSACTION_ID", length = 256)
+  private String transactionId;
 
-    @Column(name = "CONTENT")
-    private String content;
+  @Column(name = "CONTENT")
+  private String content;
 }
